@@ -6,6 +6,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
 import com.bridgeLabz.spring.dependancyInjection.CI.Student;
+import com.bridgeLabz.spring.dependancyInjection.CI.Collection.Project;
 import com.bridgeLabz.spring.dependancyInjection.CI.dependentObject.Employee;
 
 @SuppressWarnings("deprecation")
@@ -35,10 +36,18 @@ public class App {
 		 * Alternate type
 		 */
 		
-		Resource resource = new ClassPathResource("CIObject.xml");
+//		Resource resource = new ClassPathResource("CIObject.xml");
+//		BeanFactory factory = new XmlBeanFactory(resource);
+//		Employee employee = factory.getBean("employee", Employee.class);
+//		employee.show();
+		
+		/**
+		 * CI dependent Collection
+		 */
+		Resource resource = new ClassPathResource("CICollection.xml");
 		BeanFactory factory = new XmlBeanFactory(resource);
-		Employee employee = factory.getBean("employee", Employee.class);
-		employee.show();
+		Project project = factory.getBean("project", Project.class);
+		project.displayEmployeeInfo();
 		
 		
 

@@ -44,9 +44,17 @@ public class Employee {
 		this.address = address;
 	}
 
+	@Override
+	public String toString() {
+		
+		return "ID : " + id + ", name : " + name + " ," +  address.toString();
+	}
+
 	public void show() {
 		System.out.println("ID : " + id + ", name : " + name);
 		System.out.println(address.toString());
 	}
+	
+	
 
 }
