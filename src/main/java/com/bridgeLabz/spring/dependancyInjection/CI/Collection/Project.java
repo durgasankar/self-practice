@@ -49,5 +49,17 @@ public class Project {
 			System.out.println(count++ + ". " + iterator.next());
 		}
 	}
+	
+	public void displayEmployeeInfoWithOutAddress() {
+		System.out.println("Employee Information : ");
+		System.out.println(employee.display());
+
+		Iterator<String> iterator = projects.iterator();
+		int count = 1;
+		System.out.println("Language Information: ");
+		while (iterator.hasNext()) {
+			System.out.println(count++ + ". " + iterator.next());
+		}
+	}
 
 }

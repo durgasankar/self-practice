@@ -45,13 +45,21 @@ public class App {
 		 * CI dependent Collection multiple objects
 		 */
 		
-		Resource resource = new ClassPathResource("CICollectionMultipleInput.xml");
-		BeanFactory factory = new XmlBeanFactory(resource);
-		Project project = factory.getBean("project", Project.class);
-		Project project2 = factory.getBean("project2", Project.class);
-		project.displayEmployeeInfo();
-		project2.displayEmployeeInfo();
+//		Resource resource = new ClassPathResource("CICollectionMultipleInput.xml");
+//		BeanFactory factory = new XmlBeanFactory(resource);
+//		Project project = factory.getBean("project", Project.class);
+//		Project project2 = factory.getBean("project2", Project.class);
+//		project.displayEmployeeInfo();
+//		project2.displayEmployeeInfo();
 		
+		/**
+		 * Constructor Chaining
+		 */
+		Resource resource = new ClassPathResource("CIInhertance.xml");
+		BeanFactory factory = new XmlBeanFactory(resource);
+		Project project = factory.getBean("project1", Project.class);
+		project.displayEmployeeInfoWithOutAddress();
+
 		
 
 	}
