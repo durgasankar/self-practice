@@ -8,6 +8,7 @@ import org.springframework.core.io.Resource;
 import com.bridgeLabz.spring.dependancyInjection.CI.Student;
 import com.bridgeLabz.spring.dependancyInjection.CI.Collection.Project;
 import com.bridgeLabz.spring.dependancyInjection.CI.dependentObject.Employee;
+import com.bridgeLabz.spring.dependancyInjection.CI.setterInjection.AdvancedStudent;
 
 @SuppressWarnings("deprecation")
 public class App {
@@ -53,14 +54,22 @@ public class App {
 //		project2.displayEmployeeInfo();
 		
 		/**
-		 * Constructor Chaining
+		 * Constructor Chaining with collection
 		 */
-		Resource resource = new ClassPathResource("CIInhertance.xml");
-		BeanFactory factory = new XmlBeanFactory(resource);
-		Project project = factory.getBean("project1", Project.class);
-		project.displayEmployeeInfoWithOutAddress();
-
+//		Resource resource = new ClassPathResource("CIInhertance.xml");
+//		BeanFactory factory = new XmlBeanFactory(resource);
+//		Project project = factory.getBean("project1", Project.class);
+//		project.displayEmployeeInfoWithOutAddress();
 		
+		/**
+		 * Setter Injection and fetching data
+		 */
+
+		Resource resource = new ClassPathResource("CISetterInjection.xml");
+		BeanFactory factory = new XmlBeanFactory(resource);
+		AdvancedStudent advStudent = factory.getBean("advancedStudent", AdvancedStudent.class);
+		System.out.println(advStudent.toString());
+
 
 	}
 }
