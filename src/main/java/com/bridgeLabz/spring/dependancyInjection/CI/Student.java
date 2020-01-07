@@ -1,7 +1,7 @@
-package com.bridgeLabz.spring.applicationContext;
+package com.bridgeLabz.spring.dependancyInjection.CI;
 
 /**
- * Spring example practice fetching data by using constructor
+ * Spring example Constructor Injection
  * 
  * @author Durgasankar Mishra
  * @created 2020-01-07
@@ -23,8 +23,8 @@ public class Student {
 		this.name = name;
 	}
 
-	public void displayInfo() {
-		System.out.println("Hello: " + name);
+	public void getDetails() {
+		System.out.println("Hy " + name);
 	}
 
 }
