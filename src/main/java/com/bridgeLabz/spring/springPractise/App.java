@@ -42,12 +42,15 @@ public class App {
 //		employee.show();
 		
 		/**
-		 * CI dependent Collection
+		 * CI dependent Collection multiple objects
 		 */
-		Resource resource = new ClassPathResource("CICollection.xml");
+		
+		Resource resource = new ClassPathResource("CICollectionMultipleInput.xml");
 		BeanFactory factory = new XmlBeanFactory(resource);
 		Project project = factory.getBean("project", Project.class);
+		Project project2 = factory.getBean("project2", Project.class);
 		project.displayEmployeeInfo();
+		project2.displayEmployeeInfo();
 		
 		
 
