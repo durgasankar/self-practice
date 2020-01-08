@@ -7,12 +7,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
-import com.bridgeLabz.spring.dependancyInjection.CI.Student;
+//import com.bridgeLabz.spring.dependancyInjection.CI.Student;
 import com.bridgeLabz.spring.dependancyInjection.CI.Collection.Project;
 import com.bridgeLabz.spring.dependancyInjection.CI.autoware.Human;
 import com.bridgeLabz.spring.dependancyInjection.CI.dependentObject.Employee;
 //import com.bridgeLabz.spring.dependancyInjection.CI.looseCoupling.Student;
 import com.bridgeLabz.spring.dependancyInjection.CI.looseCoupling.sim.Docomo;
+import com.bridgeLabz.spring.dependancyInjection.CI.properties.Student;
 import com.bridgeLabz.spring.dependancyInjection.CI.setterInjection.AdvancedStudent;
 
 @SuppressWarnings("deprecation")
@@ -93,10 +94,20 @@ public class App {
 //		Docomo docomoSim = context.getBean("docomoSim", Docomo.class);
 //		docomoSim.activateService();
 		
-		ApplicationContext context = new ClassPathXmlApplicationContext("SIAutoware.xml");
-		System.out.println("Bean file loaded successfully");
-		Human human = context.getBean("human", Human.class);
-		human.startWorking();
+		/**
+		 * Autowired and qualifier annotations
+		 */
+		
+//		ApplicationContext context = new ClassPathXmlApplicationContext("SIAutoware.xml");
+//		System.out.println("Bean file loaded successfully");
+//		Human human = context.getBean("human", Human.class);
+//		human.startWorking();
+		
+		ApplicationContext context = new ClassPathXmlApplicationContext("CIProperties.xml");
+		System.out.println("Bean file loaded successfully!");
+		Student student = context.getBean("student", Student.class);
+		student.displayStudentInfo();
+		
 
 	}
 }
