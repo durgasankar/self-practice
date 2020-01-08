@@ -1,17 +1,23 @@
 package com.bridgeLabz.spring.springPractise;
 
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 
+import com.bridgeLabz.spring.dependancyInjection.CI.looseCoupling.sim.Docomo;
+
+//import org.springframework.beans.factory.BeanFactory;
+//import org.springframework.beans.factory.xml.XmlBeanFactory;
+//import org.springframework.context.ApplicationContext;
+//import org.springframework.context.support.ClassPathXmlApplicationContext;
+//import org.springframework.core.io.ClassPathResource;
+//import org.springframework.core.io.Resource;
+//
 //import com.bridgeLabz.spring.dependancyInjection.CI.Student;
-import com.bridgeLabz.spring.dependancyInjection.CI.Collection.Project;
-import com.bridgeLabz.spring.dependancyInjection.CI.dependentObject.Employee;
-import com.bridgeLabz.spring.dependancyInjection.CI.looseCoupling.Student;
-import com.bridgeLabz.spring.dependancyInjection.CI.setterInjection.AdvancedStudent;
+//import com.bridgeLabz.spring.dependancyInjection.CI.Collection.Project;
+//import com.bridgeLabz.spring.dependancyInjection.CI.dependentObject.Employee;
+//import com.bridgeLabz.spring.dependancyInjection.CI.looseCoupling.Student;
+//import com.bridgeLabz.spring.dependancyInjection.CI.looseCoupling.sim.Docomo;
+//import com.bridgeLabz.spring.dependancyInjection.CI.setterInjection.AdvancedStudent;
 
 @SuppressWarnings("deprecation")
 public class App {
@@ -77,12 +83,19 @@ public class App {
 		 * Setter Injection and Loose Coupling
 		 */
 		
-		ApplicationContext context = new ClassPathXmlApplicationContext("SILooseCoupling.xml");
-		System.out.println("Bean loaded sucessfully");
-		Student student = context.getBean("cheat", Student.class);
-		student.cheating();
+//		ApplicationContext context = new ClassPathXmlApplicationContext("SILooseCoupling.xml");
+//		System.out.println("Bean loaded successfully");
+//		Student student = context.getBean("cheat", Student.class);
+//		student.cheating();
 		
-
+		/**
+		 * Setter Injection and loose coupling with example of SimCard
+		 */
+		
+		ApplicationContext context = new ClassPathXmlApplicationContext("SILooseCouplingSim.xml");
+		System.out.println("Sim Bean looded Successfully");
+		Docomo docomoSim = context.getBean("docomoSim", Docomo.class);
+		docomoSim.activateService();
 
 	}
 }
