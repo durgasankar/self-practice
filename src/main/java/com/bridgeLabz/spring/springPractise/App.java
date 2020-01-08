@@ -126,6 +126,7 @@ public class App {
 		System.out.println("Bean file loaded sucessfully");
 		Phone phone = context.getBean(Phone.class);
 		phone.getPhoneDetails();
+		
 
 	}
 }

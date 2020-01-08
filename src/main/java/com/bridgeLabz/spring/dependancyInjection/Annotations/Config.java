@@ -21,4 +21,9 @@ public class Config {
 
 	}
 
+	@Bean
+	public Processor getProcessor() {
+		return new MobileProcessor();
+	}
+
 }
