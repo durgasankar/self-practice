@@ -22,7 +22,7 @@
                
                
                <bean id="docomoSim" class="com.bridgeLabz.spring.dependancyInjection.CI.looseCoupling.sim.Docomo">
-               		<property name="service" ref="call"></property>
+               		<property name="service" ref="data"></property>
                </bean>
                
 
