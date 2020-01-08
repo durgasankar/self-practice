@@ -1,12 +1,16 @@
 package com.bridgeLabz.spring.springPractise;
 
 import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
+import com.bridgeLabz.spring.dependancyInjection.Annotations.Config;
+import com.bridgeLabz.spring.dependancyInjection.Annotations.Phone;
 //import com.bridgeLabz.spring.dependancyInjection.CI.Student;
 import com.bridgeLabz.spring.dependancyInjection.CI.Collection.Project;
 import com.bridgeLabz.spring.dependancyInjection.CI.autoware.Human;
@@ -16,7 +20,7 @@ import com.bridgeLabz.spring.dependancyInjection.CI.looseCoupling.sim.Docomo;
 import com.bridgeLabz.spring.dependancyInjection.CI.properties.Student;
 import com.bridgeLabz.spring.dependancyInjection.CI.setterInjection.AdvancedStudent;
 
-@SuppressWarnings("deprecation")
+@SuppressWarnings({ "deprecation", "unused", "resource" })
 public class App {
 
 	public static void main(String[] args) {
@@ -93,21 +97,35 @@ public class App {
 //		System.out.println("Sim Bean looded Successfully");
 //		Docomo docomoSim = context.getBean("docomoSim", Docomo.class);
 //		docomoSim.activateService();
-		
+
 		/**
 		 * Autowired and qualifier annotations
 		 */
-		
+
 //		ApplicationContext context = new ClassPathXmlApplicationContext("SIAutoware.xml");
 //		System.out.println("Bean file loaded successfully");
 //		Human human = context.getBean("human", Human.class);
 //		human.startWorking();
-		
-		ApplicationContext context = new ClassPathXmlApplicationContext("CIProperties.xml");
-		System.out.println("Bean file loaded successfully!");
-		Student student = context.getBean("student", Student.class);
-		student.displayStudentInfo();
-		
+
+		/**
+		 * Fetching data from properties file extension and use of annotations to put
+		 * value
+		 */
+
+//		ApplicationContext context = new ClassPathXmlApplicationContext("CIProperties.xml");
+//		System.out.println("Bean file loaded successfully!");
+//		Student student = context.getBean("student", Student.class);
+//		student.displayStudentInfo();
+
+		/**
+		 * Here as we using annotations first we load applicationContext interface
+		 * implemented class. as to avoid creating xml we need to create a Configuration
+		 * Class where all class configurations will be present
+		 */
+		ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
+		System.out.println("Bean file loaded sucessfully");
+		Phone phone = context.getBean(Phone.class);
+		phone.getPhoneDetails();
 
 	}
 }
