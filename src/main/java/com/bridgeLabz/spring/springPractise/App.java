@@ -2,12 +2,15 @@ package com.bridgeLabz.spring.springPractise;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
-import com.bridgeLabz.spring.dependancyInjection.CI.Student;
+//import com.bridgeLabz.spring.dependancyInjection.CI.Student;
 import com.bridgeLabz.spring.dependancyInjection.CI.Collection.Project;
 import com.bridgeLabz.spring.dependancyInjection.CI.dependentObject.Employee;
+import com.bridgeLabz.spring.dependancyInjection.CI.looseCoupling.Student;
 import com.bridgeLabz.spring.dependancyInjection.CI.setterInjection.AdvancedStudent;
 
 @SuppressWarnings("deprecation")
@@ -65,10 +68,20 @@ public class App {
 		 * Setter Injection and fetching data
 		 */
 
-		Resource resource = new ClassPathResource("CISetterInjection.xml");
-		BeanFactory factory = new XmlBeanFactory(resource);
-		AdvancedStudent advStudent = factory.getBean("advancedStudent", AdvancedStudent.class);
-		System.out.println(advStudent.toString());
+//		Resource resource = new ClassPathResource("CISetterInjection.xml");
+//		BeanFactory factory = new XmlBeanFactory(resource);
+//		AdvancedStudent advStudent = factory.getBean("advancedStudent", AdvancedStudent.class);
+//		System.out.println(advStudent.toString());
+		
+		/**
+		 * Setter Injection and Loose Coupling
+		 */
+		
+		ApplicationContext context = new ClassPathXmlApplicationContext("SILooseCoupling.xml");
+		System.out.println("Bean loaded sucessfully");
+		Student student = context.getBean("cheat", Student.class);
+		student.cheating();
+		
 
 
 	}
