@@ -9,6 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
+import com.bridgeLabz.spring.AOP.Service.ShapeService;
 import com.bridgeLabz.spring.dependancyInjection.Annotations.Config;
 import com.bridgeLabz.spring.dependancyInjection.Annotations.Phone;
 //import com.bridgeLabz.spring.dependancyInjection.CI.Student;
@@ -94,7 +95,7 @@ public class App {
 		 */
 
 //		ApplicationContext context = new ClassPathXmlApplicationContext("SILooseCouplingSim.xml");
-//		System.out.println("Sim Bean looded Successfully");
+//		System.out.println("Sim Bean loaded Successfully");
 //		Docomo docomoSim = context.getBean("docomoSim", Docomo.class);
 //		docomoSim.activateService();
 
@@ -122,12 +123,26 @@ public class App {
 		 * implemented class. as to avoid creating xml we need to create a Configuration
 		 * Class where all class configurations will be present
 		 */
-		ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
-		System.out.println("Bean file loaded sucessfully");
-		Phone phone = context.getBean(Phone.class);
-		phone.getPhoneDetails();
-		((AnnotationConfigApplicationContext)context).close();
-		
+//		ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
+//		System.out.println("Bean file loaded sucessfully");
+//		Phone phone = context.getBean(Phone.class);
+//		phone.getPhoneDetails();
+//		((AnnotationConfigApplicationContext) context).close();
+
+		/**
+		 * AOP. first we need to create a aspect class over that class we need to
+		 * mention @Aspect where we need to mention all our aspects like @Before @After
+		 * and other. We need to define that class inside inside XML and if we are using
+		 * xml we need to mention <aop:aspectj-autoproxy/> so that we can instruct the
+		 * controller to use AOP
+		 */
+
+		ApplicationContext context = new ClassPathXmlApplicationContext("springAOP.xml");
+		System.out.println("Bean loaded successfuly");
+		ShapeService service = context.getBean("shapeService", ShapeService.class);
+		System.out.println(service.getCircle().getName());
+
+		((ClassPathXmlApplicationContext) context).close();
 
 	}
 }
