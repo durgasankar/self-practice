@@ -8,8 +8,9 @@ public class Circle {
 		return name;
 	}
 
-	public void setName(String name) {
+	public String setNameandReturn(String name) {
 		this.name = name;
+		return name;
 	}
 
 }

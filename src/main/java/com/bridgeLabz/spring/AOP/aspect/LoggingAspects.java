@@ -1,9 +1,12 @@
 package com.bridgeLabz.spring.AOP.aspect;
 
-import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+
+import com.bridgeLabz.spring.AOP.Model.Circle;
 
 /**
  * We converted this class to a Aspect class inside this class we can make so
@@ -29,27 +32,80 @@ import org.aspectj.lang.annotation.Pointcut;
  */
 @Aspect
 public class LoggingAspects {
-	@Before("execution(public String com.bridgeLabz.spring.AOP.Model.Circle.getName())")
-	public void loggingAdvice() {
-		System.out.println("Advice is run... get method is called...");
+//	@Before("execution(public String com.bridgeLabz.spring.AOP.Model.Circle.getName())")
+//	public void loggingAdvice() {
+//		System.out.println("Advice is run... get method is called...");
+//	}
+	/**
+	 * JoinPoint we can mention as input parameter where it has some
+	 * predefined functions one most used function is getTargetPoint()
+	 * best use is it returns the object address we can fetch the object 
+	 * from that and we can check accordingly.
+	 * 
+	 * @param joinPoint as input parameter
+	 */
+	@Before("allCircleMethod()")
+	public void secondAfterAdvice(JoinPoint joinPoint) {
+//		System.out.println("second after advice...");
+		System.out.println(joinPoint.getTarget());
+		Circle circle = (Circle) joinPoint.getTarget();
+		System.out.println(circle.getName());
+		
 	}
 	
-	@After("allGetters()")
-	public void secondAfterAdvice() {
-		System.out.println("second after advice...");
-	}
-	
-	@Before("allGetters()")
-	public void secondBeforeAdvice() {
-		System.out.println("second before advice...");
-	}
+//	@Before("allGetters()")
+//	public void secondBeforeAdvice() {
+//		System.out.println("second before advice...");
+//	}
 	/**
 	 * avoid writing execution pattern many times we can mention that on a empty
 	 *  Method we can mention on top of that with @pointCut annotation name which 
 	 *  will refer to that.  
 	 */
-	@Pointcut("execution(* get*())")
-	public void allGetters() {}
+//	@Pointcut("execution(* get*())")
+//	public void allGetters() {}
 	
+	/**
+	 * point cut for all methods of circle class
+	 * 
+	 * But it is best practice for readable purpose we should use 
+	 * @Pointcut("within(com.bridgeLabz.spring.AOP.Model.Circle)")
+	 */
+	@Pointcut("within(com.bridgeLabz.spring.AOP.Model.Circle)")
+	public void allCircleMethod() {}
+	
+	/**
+	 * we can use operators with logical && and ||
+	 */
+	
+//	@Before("allCircleMethod() && allGetters()")
+//	public void allCircleMethodAndAllGettres() {
+//		System.out.println("all Circle Method And All Gettres...");
+//	}
+	
+	/**
+	 * point cut for all method takes String as input parameter.
+	 */
+	@Pointcut("args(String)")
+	public void allStringArguments() {}
+	
+	
+	@Before("allStringArguments()")
+	public void StringArguments() {
+		System.out.println("Method takes String arguments are called");
+	}
+	
+	//@After -> it will execute if that method is executed.
+	//@AfterReturning -> it will execute after  successfully execution of that method
+	//@AfterThrowing -> it will work after an exception is thrown. it works like finally block.
+	
+	/**
+	 * match this point cut exception and fetch the input parameter and also fetch
+	 * the returning parameter
+	 */
+	@AfterReturning(pointcut = "args(name)", returning = "returnString")
+	public void StringArgumentMethods(String name, String returnString) {
+		System.out.println("Method takes String argument is called  value : " + name + " Out put value : " + returnString);
+	}
 
 }

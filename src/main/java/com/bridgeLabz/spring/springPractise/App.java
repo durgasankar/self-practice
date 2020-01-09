@@ -140,6 +140,7 @@ public class App {
 		ApplicationContext context = new ClassPathXmlApplicationContext("springAOP.xml");
 		System.out.println("Bean loaded successfuly");
 		ShapeService service = context.getBean("shapeService", ShapeService.class);
+//		service.getCircle().setName("Ramesh");
 		System.out.println(service.getCircle().getName());
 		((ClassPathXmlApplicationContext) context).close();
 
