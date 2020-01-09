@@ -46,81 +46,81 @@ public class LoggingAspects {
 	 * 
 	 * @param joinPoint as input parameter
 	 */
-	@Before("allCircleMethod()")
-	public void secondAfterAdvice(JoinPoint joinPoint) {
-//		System.out.println("second after advice...");
-		System.out.println(joinPoint.getTarget());
-		Circle circle = (Circle) joinPoint.getTarget();
-		System.out.println(circle.getName());
-		
-	}
-	
-//	@Before("allGetters()")
-//	public void secondBeforeAdvice() {
-//		System.out.println("second before advice...");
+//	@Before("allCircleMethod()")
+//	public void secondAfterAdvice(JoinPoint joinPoint) {
+////		System.out.println("second after advice...");
+//		System.out.println(joinPoint.getTarget());
+//		Circle circle = (Circle) joinPoint.getTarget();
+//		System.out.println(circle.getName());
+//		
 //	}
-	/**
-	 * avoid writing execution pattern many times we can mention that on a empty
-	 *  Method we can mention on top of that with @pointCut annotation name which 
-	 *  will refer to that.  
-	 */
-	@Pointcut("execution(* get*())")
-	public void allGetters() {}
-	
-	/**
-	 * point cut for all methods of circle class
-	 * 
-	 * But it is best practice for readable purpose we should use 
-	 * @Pointcut("within(com.bridgeLabz.spring.AOP.Model.Circle)")
-	 */
-	@Pointcut("within(com.bridgeLabz.spring.AOP.Model.Circle)")
-	public void allCircleMethod() {}
-	
-	/**
-	 * we can use operators with logical && and ||
-	 */
-	
-//	@Before("allCircleMethod() && allGetters()")
-//	public void allCircleMethodAndAllGettres() {
-//		System.out.println("all Circle Method And All Gettres...");
+//	
+////	@Before("allGetters()")
+////	public void secondBeforeAdvice() {
+////		System.out.println("second before advice...");
+////	}
+//	/**
+//	 * avoid writing execution pattern many times we can mention that on a empty
+//	 *  Method we can mention on top of that with @pointCut annotation name which 
+//	 *  will refer to that.  
+//	 */
+//	@Pointcut("execution(* get*())")
+//	public void allGetters() {}
+//	
+//	/**
+//	 * point cut for all methods of circle class
+//	 * 
+//	 * But it is best practice for readable purpose we should use 
+//	 * @Pointcut("within(com.bridgeLabz.spring.AOP.Model.Circle)")
+//	 */
+//	@Pointcut("within(com.bridgeLabz.spring.AOP.Model.Circle)")
+//	public void allCircleMethod() {}
+//	
+//	/**
+//	 * we can use operators with logical && and ||
+//	 */
+//	
+////	@Before("allCircleMethod() && allGetters()")
+////	public void allCircleMethodAndAllGettres() {
+////		System.out.println("all Circle Method And All Gettres...");
+////	}
+//	
+//	/**
+//	 * point cut for all method takes String as input parameter.
+//	 */
+//	@Pointcut("args(String)")
+//	public void allStringArguments() {}
+//	
+//	
+//	@Before("allStringArguments()")
+//	public void StringArguments() {
+//		System.out.println("Method takes String arguments are called");
 //	}
-	
-	/**
-	 * point cut for all method takes String as input parameter.
-	 */
-	@Pointcut("args(String)")
-	public void allStringArguments() {}
-	
-	
-	@Before("allStringArguments()")
-	public void StringArguments() {
-		System.out.println("Method takes String arguments are called");
-	}
-	
-	//@After -> it will execute if that method is executed.
-	//@AfterReturning -> it will execute after  successfully execution of that method
-	//@AfterThrowing -> it will work after an exception is thrown. it works like finally block.
-	
-	/**
-	 * match this point cut exception and fetch the input parameter and also fetch
-	 * 
-	 * the returning parameter
-	 */
-	@AfterReturning(pointcut = "args(name)", returning = "returnString")
-	public void StringArgumentMethods(String name, String returnString) {
-		System.out.println("Method takes String argument is called  value : " + name + " Out put value : " + returnString);
-	}
-	
-	/**
-	 * it must take one parameter atLeast
-	 * we have more control 
-	 * we can mention before code and after code.
-	 * Additional feature we can get any return value if there.
-	 * 
-	 * @param joinPoint
-	 * @throws Throwable 
-	 */
-	@Around("allGetters()")
+//	
+//	//@After -> it will execute if that method is executed.
+//	//@AfterReturning -> it will execute after  successfully execution of that method
+//	//@AfterThrowing -> it will work after an exception is thrown. it works like finally block.
+//	
+//	/**
+//	 * match this point cut exception and fetch the input parameter and also fetch
+//	 * 
+//	 * the returning parameter
+//	 */
+//	@AfterReturning(pointcut = "args(name)", returning = "returnString")
+//	public void StringArgumentMethods(String name, String returnString) {
+//		System.out.println("Method takes String argument is called  value : " + name + " Out put value : " + returnString);
+//	}
+//	
+//	/**
+//	 * it must take one parameter atLeast
+//	 * we have more control 
+//	 * we can mention before code and after code.
+//	 * Additional feature we can get any return value if there.
+//	 * 
+//	 * @param joinPoint
+//	 * @throws Throwable 
+//	 */
+	@Around("@annotation(com.bridgeLabz.spring.AOP.annotations.Loggable)")
 	public Object myAroundAdvice(ProceedingJoinPoint proceedingJoinPoint) {
 		Object returnValue = null;
 		try {
