@@ -141,7 +141,6 @@ public class App {
 		System.out.println("Bean loaded successfuly");
 		ShapeService service = context.getBean("shapeService", ShapeService.class);
 		System.out.println(service.getCircle().getName());
-
 		((ClassPathXmlApplicationContext) context).close();
 
 	}
