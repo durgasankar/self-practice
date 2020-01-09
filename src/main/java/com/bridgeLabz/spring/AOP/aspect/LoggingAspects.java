@@ -1,7 +1,9 @@
 package com.bridgeLabz.spring.AOP.aspect;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -62,8 +64,8 @@ public class LoggingAspects {
 	 *  Method we can mention on top of that with @pointCut annotation name which 
 	 *  will refer to that.  
 	 */
-//	@Pointcut("execution(* get*())")
-//	public void allGetters() {}
+	@Pointcut("execution(* get*())")
+	public void allGetters() {}
 	
 	/**
 	 * point cut for all methods of circle class
@@ -101,11 +103,41 @@ public class LoggingAspects {
 	
 	/**
 	 * match this point cut exception and fetch the input parameter and also fetch
+	 * 
 	 * the returning parameter
 	 */
 	@AfterReturning(pointcut = "args(name)", returning = "returnString")
 	public void StringArgumentMethods(String name, String returnString) {
 		System.out.println("Method takes String argument is called  value : " + name + " Out put value : " + returnString);
+	}
+	
+	/**
+	 * it must take one parameter atLeast
+	 * we have more control 
+	 * we can mention before code and after code.
+	 * Additional feature we can get any return value if there.
+	 * 
+	 * @param joinPoint
+	 * @throws Throwable 
+	 */
+	@Around("allGetters()")
+	public Object myAroundAdvice(ProceedingJoinPoint proceedingJoinPoint) {
+		Object returnValue = null;
+		try {
+			//execute some code
+			System.out.println("Before advice.............");
+			proceedingJoinPoint.proceed();
+			
+			//execute some code
+			System.out.println("after returning.............");
+		} catch (Throwable e) {
+			System.out.println("After Throwing.............");
+		}
+		
+		System.out.println("After finally");
+		return returnValue;
+		
+		
 	}
 
 }
