@@ -1,7 +1,9 @@
 package com.bridgeLabz.spring.dependancyInjection.Annotations;
 
-import org.springframework.context.annotation.Bean;
+
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 /**
  * Here as we using annotations first we load applicationContext interface
@@ -13,17 +15,21 @@ import org.springframework.context.annotation.Configuration;
  * @version 1.0
  */
 @Configuration
+@ComponentScan("com.bridgeLabz.spring.dependancyInjection.Annotations")
+@PropertySource("classpath:mobile-info.properties")
 public class Config {
 
-	@Bean
-	public Phone getPhone() {
-		return new Phone();
-
-	}
-
-	@Bean
-	public Processor getProcessor() {
-		return new MobileProcessor();
-	}
+//	@Bean
+//	public Phone getPhone() {
+//		return new Phone();
+//
+//	}
+//
+//	@Bean
+//	public Processor getProcessor() {
+//		return new Octacore();
+//	}
+	
+	
 
 }

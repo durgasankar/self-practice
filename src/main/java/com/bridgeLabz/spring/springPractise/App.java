@@ -20,7 +20,7 @@ import com.bridgeLabz.spring.dependancyInjection.CI.looseCoupling.sim.Docomo;
 import com.bridgeLabz.spring.dependancyInjection.CI.properties.Student;
 import com.bridgeLabz.spring.dependancyInjection.CI.setterInjection.AdvancedStudent;
 
-@SuppressWarnings({ "deprecation", "unused", "resource" })
+@SuppressWarnings({ "deprecation", "unused" })
 public class App {
 
 	public static void main(String[] args) {
@@ -126,6 +126,7 @@ public class App {
 		System.out.println("Bean file loaded sucessfully");
 		Phone phone = context.getBean(Phone.class);
 		phone.getPhoneDetails();
+		((AnnotationConfigApplicationContext)context).close();
 		
 
 	}
