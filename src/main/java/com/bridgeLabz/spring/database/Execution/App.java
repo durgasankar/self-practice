@@ -1,5 +1,7 @@
 package com.bridgeLabz.spring.database.Execution;
 
+import java.util.ArrayList;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,12 +15,24 @@ public class App {
 		ApplicationContext context = new ClassPathXmlApplicationContext("springJDBC.xml");
 		System.out.println("Bean loaded successfully");
 		IContactDAOService daoService = context.getBean("contactDAO", IContactDAOService.class);
-		Contact contact = new Contact();
-		contact.setName("Rajaaaa");
-		contact.setPhoneNumber("7504147446");
-		daoService.save(contact);
+//		Contact contact = new Contact();
+//		contact.setName("Ramesh");
+//		contact.setPhoneNumber("7504147446");
+//		daoService.save(contact);
+//		contact.setName("raja");
+//		contact.setPhoneNumber("1234567890");
+//		daoService.update(contact);
+		ArrayList<Contact> allRecord = (ArrayList<Contact>) daoService.getAll();
+		for(int i=0; i < allRecord.size(); i++) {
+			System.out.println(allRecord.get(i).getName());
+			System.out.println(allRecord.get(i).getPhoneNumber());
+		}
 		
 		((ClassPathXmlApplicationContext) context).close();
+		
+	
+	
+	
 	}
 
 }

@@ -2,18 +2,11 @@ package com.bridgeLabz.spring.database.driverManager;
 
 public class DBConnection {
 
-	private String driverClassName;
+//	private String driverClassName;
+
 	private String url;
 	private String username;
 	private String password;
-
-	public String getDriverClassName() {
-		return driverClassName;
-	}
-
-	public void setDriverClassName(String driverClassName) {
-		this.driverClassName = driverClassName;
-	}
 
 	public String getUrl() {
 		return url;
