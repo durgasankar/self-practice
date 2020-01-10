@@ -8,16 +8,11 @@ import java.util.List;
 import java.util.Map;
 
 import javax.sql.DataSource;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
-
 import com.bridgeLabz.spring.database.model.Contact;
 
-@Component
 public class ContactDAOImpl implements IContactDAOService {
-	@Autowired
+
 	private DataSource dataSource;
 //	private JdbcTemplate jdbcTemplate;
 
