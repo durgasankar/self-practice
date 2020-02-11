@@ -21,4 +21,7 @@ export class EventBindingComponent implements OnInit {
     console.log(event.target.value);
     this.message1 = event.target.value + " added to the cart (^_^)";
   }
+  getInputInfo(inputInfo) {
+    console.log(inputInfo.name);
+  }
 }

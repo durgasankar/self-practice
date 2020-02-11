@@ -1,4 +1,4 @@
-<h1>Event binding</h1>
+<!-- <h1>Event binding</h1>
 <button (click)="addToCart()">Add to cart</button>
 <p>{{ message }}</p>
 
@@ -9,4 +9,8 @@
 <button value="w machine" (click)="onAddingCart($event)">w machin</button
 ><br /><br />
 <button value="tv" (click)="onAddingCart($event)">tv</button>
-<p>{{ message1 }}</p>
+<p>{{ message1 }}</p> -->
+
+<!-- getting the access of a complete tag by using reference variable . we can denote a reference variable in angular by using # -->
+<input #inputInfo type="text" value="Durgasankar" name="raja" />
+<button (click)="getInputInfo(inputInfo)">Get info</button>
