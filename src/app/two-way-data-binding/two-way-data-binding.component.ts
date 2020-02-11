@@ -9,5 +9,5 @@ export class TwoWayDataBindingComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-  uname: string = "raja";
+  Username: string = "";
 }

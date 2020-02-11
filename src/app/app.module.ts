@@ -1,10 +1,12 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+// for two way data binding
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { EventBindingComponent } from "./event-binding/event-binding.component";
 import { TwoWayDataBindingComponent } from "./two-way-data-binding/two-way-data-binding.component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,7 @@ import { TwoWayDataBindingComponent } from "./two-way-data-binding/two-way-data-
     EventBindingComponent,
     TwoWayDataBindingComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
