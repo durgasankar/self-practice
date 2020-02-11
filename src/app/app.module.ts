@@ -10,13 +10,15 @@ import { EventBindingComponent } from "./event-binding/event-binding.component";
 import { TwoWayDataBindingComponent } from "./two-way-data-binding/two-way-data-binding.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgxBootStrapDemoComponent } from './ngx-boot-strap-demo/ngx-boot-strap-demo.component';
+import { NgIfDirectiveComponent } from './ng-if-directive/ng-if-directive.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventBindingComponent,
     TwoWayDataBindingComponent,
-    NgxBootStrapDemoComponent
+    NgxBootStrapDemoComponent,
+    NgIfDirectiveComponent
   ],
   imports: [
     BrowserModule,

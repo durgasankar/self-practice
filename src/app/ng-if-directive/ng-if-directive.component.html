@@ -1,0 +1,16 @@
+<h1>hallo</h1>
+<button (click)="createNewBlock()">create block</button>
+<br /><br />
+<!-- How to create ngIf else condition -->
+<!-- a button created click operation os assigned, with a boolean variable true false oeration is done at .ts file
+, then *ngIf is added this variable is called . -->
+<div *ngIf="isBlockCreated; else elseBlockOperation">
+  <p>new block is created</p>
+</div>
+<!-- Foe execution of else condition a reference varible is created 
+with # then that condition is implemented in ngIf condition -->
+<ng-template #elseBlockOperation>
+  <div>
+    <p>No blocks available</p>
+  </div>
+</ng-template>
