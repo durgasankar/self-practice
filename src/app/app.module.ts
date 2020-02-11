@@ -11,6 +11,7 @@ import { TwoWayDataBindingComponent } from "./two-way-data-binding/two-way-data-
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgxBootStrapDemoComponent } from './ngx-boot-strap-demo/ngx-boot-strap-demo.component';
 import { NgIfDirectiveComponent } from './ng-if-directive/ng-if-directive.component';
+import { NgSwitchComponent } from './ng-switch/ng-switch.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NgIfDirectiveComponent } from './ng-if-directive/ng-if-directive.compon
     EventBindingComponent,
     TwoWayDataBindingComponent,
     NgxBootStrapDemoComponent,
-    NgIfDirectiveComponent
+    NgIfDirectiveComponent,
+    NgSwitchComponent
   ],
   imports: [
     BrowserModule,
