@@ -15,6 +15,7 @@ import { NgSwitchComponent } from './ng-switch/ng-switch.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AboutComponent } from './about/about.component';
     NgSwitchComponent,
     HomeComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

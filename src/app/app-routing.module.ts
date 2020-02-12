@@ -6,6 +6,7 @@ import { NgSwitchComponent } from "./ng-switch/ng-switch.component";
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
 import { ContactComponent } from "./contact/contact.component";
+import { LoginComponent } from "./login/login.component";
 
 // const routes: Routes = [
 //   { path: "", component: NgIfDirectiveComponent },
@@ -13,7 +14,13 @@ import { ContactComponent } from "./contact/contact.component";
 //   { path: "switch", component: NgSwitchComponent }
 // ];
 const routes: Routes = [
-  { path: "", component: HomeComponent },
+  {
+    path: "",
+    redirectTo: "login",
+    pathMatch: "full"
+  },
+  { path: "login", component: LoginComponent },
+  { path: "home", component: HomeComponent },
   { path: "about", component: AboutComponent },
   { path: "contact", component: ContactComponent }
 ];
@@ -29,6 +36,7 @@ export class AppRoutingModule {}
 //   NgSwitchComponent
 // ];
 export const RoutingComponent = [
+  LoginComponent,
   HomeComponent,
   AboutComponent,
   ContactComponent
