@@ -12,6 +12,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgxBootStrapDemoComponent } from './ngx-boot-strap-demo/ngx-boot-strap-demo.component';
 import { NgIfDirectiveComponent } from './ng-if-directive/ng-if-directive.component';
 import { NgSwitchComponent } from './ng-switch/ng-switch.component';
+import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { NgSwitchComponent } from './ng-switch/ng-switch.component';
     TwoWayDataBindingComponent,
     NgxBootStrapDemoComponent,
     NgIfDirectiveComponent,
-    NgSwitchComponent
+    NgSwitchComponent,
+    HomeComponent,
+    ContactComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

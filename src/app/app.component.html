@@ -18,7 +18,7 @@
   </li>
 </ul>
 -->
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
 <!-- <app-event-binding></app-event-binding> -->
 <!-- <app-two-way-data-binding></app-two-way-data-binding> -->
 <!-- <app-ngx-boot-strap-demo></app-ngx-boot-strap-demo> -->
@@ -28,8 +28,27 @@
   <a routerLink="/home">Home</a>
   <a routerLink="/aditi">Contact Us </a>
 </nav> -->
-<nav>
+<!-- <nav>
   <a routerLink="" routerLinkActive="active">Home</a>
   <a routerLink="event">Event</a>
   <a routerLink="switch">Switch</a>
-</nav>
+</nav> -->
+<!-- <app-home></app-home>
+<app-contact></app-contact>
+<app-about></app-about> -->
+<header>
+  <nav>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link " routerLink="">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="contact">Contact</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<router-outlet></router-outlet>
