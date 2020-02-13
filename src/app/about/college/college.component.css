@@ -1,0 +1,18 @@
+h1 {
+  background: lavenderblush;
+  padding: 5px;
+  color: lightskyblue;
+  text-align: center;
+  text-transform: capitalize;
+  text-justify: auto;
+  letter-spacing: 5px;
+  text-decoration: underline;
+  text-shadow: 2px 1px gray;
+}
+p {
+  letter-spacing: 1px;
+  padding: 10px;
+  text-indent: 100px;
+  word-spacing: 5px;
+  font-family: "verdana", Times, serif;
+}

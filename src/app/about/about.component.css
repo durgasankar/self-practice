@@ -10,5 +10,24 @@ p {
   background: #fdeef4;
   padding: 10px 10px;
   border-radius: 5px;
-  color: ;
+}
+.link {
+  padding: 10px;
+  text-align: justify;
+  background: rgba(128, 128, 128, 1);
+  height: 40px;
+  width: 160px;
+  padding: 5px 5px 5px 5px;
+  font-size: 20px;
+  text-align: justify;
+  text-decoration: none;
+}
+.school {
+  padding-right: 5px;
+  color: lightcoral;
+}
+
+.college {
+  padding-left: 5px;
+  color: lightcyan;
 }
