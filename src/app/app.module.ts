@@ -19,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SchoolComponent } from './about/school/school.component';
 import { CollegeComponent } from './about/college/college.component';
+import { BuyProductsComponent } from './buy-products/buy-products.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CollegeComponent } from './about/college/college.component';
     LoginComponent,
     PageNotFoundComponent,
     SchoolComponent,
-    CollegeComponent
+    CollegeComponent,
+    BuyProductsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,18 @@
+<h1>Buy products</h1>
+
+<div class="product">
+  <button (click)="onSelectProduct('laptop')">Laptop</button>
+  <button (click)="onSelectProduct('ac')">Ac</button>
+  <button (click)="onSelectProduct('tv')">Tv</button>
+  <button (click)="onSelectProduct('mobile')">Mobile</button>
+</div>
+<div>
+  <h2 *ngIf="!productSelected">please select any product</h2>
+  <h2 *ngIf="productSelected">{{ selectedProduct }} is selected</h2>
+</div>
+<div>
+  <button (click)="onAddingToCart()">add to the cart</button>
+</div>
+<div>
+  <h2 *ngIf="addedToTheCart">{{ addedToTheCart }} added to the cart</h2>
+</div>
