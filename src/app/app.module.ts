@@ -20,6 +20,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { SchoolComponent } from './about/school/school.component';
 import { CollegeComponent } from './about/college/college.component';
 import { BuyProductsComponent } from './buy-products/buy-products.component';
+import { ParentAppComponent } from './parent-app/parent-app.component';
+import { ChildAppComponent } from './parent-app/child-app/child-app.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { BuyProductsComponent } from './buy-products/buy-products.component';
     PageNotFoundComponent,
     SchoolComponent,
     CollegeComponent,
-    BuyProductsComponent
+    BuyProductsComponent,
+    ParentAppComponent,
+    ChildAppComponent
   ],
   imports: [
     BrowserModule,
