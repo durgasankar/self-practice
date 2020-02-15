@@ -52,3 +52,16 @@
   <button color="accent" mat-button>accent color</button>
   <button color="warn" disableRipple mat-button>warn color</button>
 </div>
+
+<!-- Material button toggle -->
+<div>
+  <mat-button-toggle #toggleBtn disableRipple>Toggle Button</mat-button-toggle>
+  {{ toggleBtn.checked }}
+</div>
+<!-- To create a group of button toggle directive -->
+<mat-button-toggle-group #toggleGroup="matButtonToggleGroup" multiple>
+  <mat-button-toggle value="angular">Angular</mat-button-toggle>
+  <mat-button-toggle value="react">React</mat-button-toggle>
+  <mat-button-toggle value="viu">Viu</mat-button-toggle>
+</mat-button-toggle-group>
+{{ toggleGroup.value }}
