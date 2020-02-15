@@ -6,8 +6,6 @@ import { FormsModule } from "@angular/forms";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 // Http client
 import { HttpClientModule } from "@angular/common/http";
-// anular material button
-import { MatButtonModule } from "@angular/material";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { EventBindingComponent } from "./event-binding/event-binding.component";
@@ -27,6 +25,7 @@ import { BuyProductsComponent } from "./buy-products/buy-products.component";
 import { ParentAppComponent } from "./parent-app/parent-app.component";
 import { ChildAppComponent } from "./parent-app/child-app/child-app.component";
 import { HttpPracticeComponent } from "./http-practice/http-practice.component";
+import { MaterialModule } from "./material/material.module";
 
 @NgModule({
   declarations: [
@@ -50,7 +49,7 @@ import { HttpPracticeComponent } from "./http-practice/http-practice.component";
   ],
   imports: [
     BrowserModule,
-    MatButtonModule,
+    MaterialModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
