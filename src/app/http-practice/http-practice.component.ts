@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-http-practice",
@@ -8,7 +9,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class HttpPracticeComponent implements OnInit {
   constructor(private http: HttpClient) {}
-  userName: string = "";
+  jwtToken: string = "";
   response: any;
   isDataAvailabe: boolean = false;
 
@@ -17,14 +18,24 @@ export class HttpPracticeComponent implements OnInit {
     //     .get("https:api.github.com/users/durgasankar")
     //     .subscribe(resp => console.log(resp));
   }
-  search() {
-    console.log("Username : " + this.userName);
+  // search() {
+  //   console.log("Username : " + this.userName);
+  //   this.http
+  //     .get("https:api.github.com/users/" + this.userName)
+  //     .subscribe(response => {
+  //       console.log(response);
+  //       this.response = response;
+  //       this.isDataAvailabe = true;
+  //     });
+  //}
+  searchNotes() {
+    console.log(this.jwtToken);
     this.http
-      .get("https:api.github.com/users/" + this.userName)
+      .get("http://localhost:8081/note/fetch/notes")
       .subscribe(response => {
         console.log(response);
         this.response = response;
-        this.isDataAvailabe = true;
+        return response;
       });
   }
 }
