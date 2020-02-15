@@ -28,14 +28,4 @@ export class HttpPracticeComponent implements OnInit {
   //       this.isDataAvailabe = true;
   //     });
   //}
-  searchNotes() {
-    console.log(this.jwtToken);
-    this.http
-      .get("http://localhost:8081/note/fetch/notes")
-      .subscribe(response => {
-        console.log(response);
-        this.response = response;
-        return response;
-      });
-  }
 }
