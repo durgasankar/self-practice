@@ -1,8 +1,18 @@
 import { NgModule } from "@angular/core";
 // anular material button
-import { MatButtonModule, MatButtonToggleModule } from "@angular/material";
+import {
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatIconModule,
+  MatBadgeModule
+} from "@angular/material";
 
-const MaterialComponents = [MatButtonModule, MatButtonToggleModule];
+const MaterialComponents = [
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatIconModule,
+  MatBadgeModule
+];
 @NgModule({
   imports: [MaterialComponents],
   exports: [MaterialComponents]
