@@ -28,4 +28,5 @@ export class HttpPracticeComponent implements OnInit {
   //       this.isDataAvailabe = true;
   //     });
   //}
+  notification = -2;
 }

@@ -71,3 +71,45 @@
   <mat-icon color="primary">alarm</mat-icon>
   <mat-icon>android</mat-icon>
 </div>
+
+<!-- Material batch -->
+
+<div style="margin: 1rem;">
+  <span matBadge="8">Notification</span>
+</div>
+<div style="margin: 1rem;">
+  <span matBadge="8" matBadgePosition="below before">Notification</span>
+</div>
+<div style="margin: 1rem;">
+  <span matBadge="8" matBadgePosition="below after">Notification</span>
+</div>
+<div style="margin: 1rem;">
+  <span matBadge="8" matBadgePosition="above before">Notification</span>
+</div>
+<!-- badge size -->
+<div style="margin: 1rem;">
+  <span matBadge="8" matBadgeSize="small">Notification</span>
+</div>
+<div style="margin: 1rem;">
+  <span matBadge="8" matBadgeSize="medium">Notification</span>
+</div>
+<div style="margin: 1rem;">
+  <span matBadge="8" matBadgeSize="large">Notification</span>
+</div>
+<!-- badge color -->
+<div style="margin: 1rem;">
+  <span matBadge="8" matBadgeColor="primary">Notification</span>
+</div>
+<div style="margin: 1rem;">
+  <span matBadge="8" matBadgeColor="accent">Notification</span>
+</div>
+<div style="margin: 1rem;">
+  <span matBadge="8" matBadgeColor="warn" matBadgeOverlap="false"
+    >Notification</span
+  >
+</div>
+<div style="margin: 1rem;">
+  <span [matBadge]="notification" [matBadgeHidden]="notification <= 0"
+    >Notification</span
+  >
+</div>
