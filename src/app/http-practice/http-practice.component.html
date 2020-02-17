@@ -195,3 +195,41 @@
 >
   Suresh
 </button>
+<!-- mat list for list dense is used to fetch if heavy data is there -->
+<div>
+  <mat-list dense>
+    <mat-list-item>item 1</mat-list-item>
+    <mat-list-item>item 2</mat-list-item>
+    <mat-list-item>item 3</mat-list-item>
+    <mat-list-item>item 4</mat-list-item>
+  </mat-list>
+</div>
+<!-- Mat nav list -->
+<div>
+  <mat-nav-list>
+    <a mat-list-item href="#">Home</a>
+    <a mat-list-item href="#">About</a>
+    <a mat-list-item href="#">Setting</a>
+  </mat-nav-list>
+</div>
+
+<!-- design with mat divider module -->
+<mat-list>
+  <mat-list-item>
+    <mat-icon matListIcon>home</mat-icon>
+    <h3 matLine>Heading 1</h3>
+    <p matLine>Paragraph 1</p>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+    <mat-icon matListIcon>folder</mat-icon>
+    <h3 matLine>Heading 2</h3>
+    <p matLine>Paragraph 2</p>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+    <mat-icon matListIcon>settings</mat-icon>
+    <h3 matLine>Heading 3</h3>
+    <p matLine>Paragraph 3</p>
+  </mat-list-item>
+</mat-list>
