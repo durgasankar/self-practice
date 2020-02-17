@@ -1,3 +1,11 @@
 button {
   margin-right: 5px;
 }
+/* distribute space  */
+.navbar {
+  justify-content: space-between;
+}
+span {
+  padding-right: 1rem;
+}
+/* title at left and other content at right */
