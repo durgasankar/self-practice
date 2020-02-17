@@ -113,3 +113,9 @@
     >Notification</span
   >
 </div>
+<!-- Mat progress spinner -->
+<div style="margin: 1rem;">
+  <mat-progress-spinner value="20"></mat-progress-spinner>
+  <mat-spinner *ngIf="showSpinner" color="warn"> </mat-spinner>
+  <button (click)="loadData()">load data</button>
+</div>
