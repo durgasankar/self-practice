@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { _MatSelectionListMixinBase } from "@angular/material";
 
 @Component({
   selector: "app-http-practice",
@@ -30,10 +31,14 @@ export class HttpPracticeComponent implements OnInit {
   //}
   notification = -2;
   showSpinner = false;
+  opened = false;
   loadData() {
     this.showSpinner = true;
     setTimeout(() => {
       this.showSpinner = false;
     }, 5000);
+  }
+  logInfo(state) {
+    console.log(state);
   }
 }

@@ -129,4 +129,23 @@
   </div>
 </mat-toolbar>
 
-<!-- converting tool bar to nav bar -->
+<!-- Material side nav -->
+<mat-sidenav-container>
+  <mat-sidenav
+    #sidenav
+    (opened)="logInfo('Opened-msg')"
+    (closed)="logInfo('Closed-msg')"
+    [(opened)]="opened"
+    mode="side"
+    >Side nav bar</mat-sidenav
+  >
+  <mat-sidenav-content
+    >Hallo
+    <button (click)="opened = !opened">Toogle Opened</button>
+    <button (click)="sidenav.open()">open</button>
+    <button (click)="sidenav.close()">close</button>
+    <button (click)="sidenav.toggle()">Toggle</button>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<!-- two way binding  -->
+<!-- moods in side nav default = over     mode="side",mode="over",mode="push" -->
