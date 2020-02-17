@@ -149,3 +149,21 @@
 </mat-sidenav-container>
 <!-- two way binding  -->
 <!-- moods in side nav default = over     mode="side",mode="over",mode="push" -->
+
+<!-- Mat menu basic menu attribute -->
+
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="backendSubMenu">
+    Backend
+  </button>
+  <button mat-menu-item>Frontend</button>
+</mat-menu>
+
+<button color="primary" mat-menu-item [matMenuTriggerFor]="appMenu">
+  Menu
+</button>
+<mat-menu #backendSubMenu="matMenu">
+  <button mat-menu-item>Java</button>
+  <button mat-menu-item>Scala</button>
+  <button mat-menu-item>.Net</button>
+</mat-menu>
