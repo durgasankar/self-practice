@@ -156,7 +156,7 @@
   <button mat-menu-item [matMenuTriggerFor]="backendSubMenu">
     Backend
   </button>
-  <button mat-menu-item>Frontend</button>
+  <button mat-menu-item [matMenuTriggerFor]="frontendSubMenu">Frontend</button>
 </mat-menu>
 
 <button color="primary" mat-menu-item [matMenuTriggerFor]="appMenu">
@@ -167,3 +167,31 @@
   <button mat-menu-item>Scala</button>
   <button mat-menu-item>.Net</button>
 </mat-menu>
+<mat-menu #frontendSubMenu="matMenu">
+  <button mat-menu-item>Angular</button>
+  <button mat-menu-item>React</button>
+  <button mat-menu-item>Viu</button>
+</mat-menu>
+
+<!-- mat menu trigger  lazy menu work on click -->
+<mat-menu #lazyMenu="matMenu">
+  <ng-template matMenuContent let-name="name" let-hobby="hobby">
+    <button mat-menu-item>Settings</button>
+    <button mat-menu-item>Hobby {{ hobby }}</button>
+    <button mat-menu-item>Log out {{ name }}</button>
+  </ng-template>
+</mat-menu>
+<button
+  mat-raised-button
+  [matMenuTriggerData]="{ name: 'Ramesh', hobby: 'Cricket' }"
+  [matMenuTriggerFor]="lazyMenu"
+>
+  ramesh
+</button>
+<button
+  mat-raised-button
+  [matMenuTriggerData]="{ name: 'Suresh', hobby: 'Chating' }"
+  [matMenuTriggerFor]="lazyMenu"
+>
+  Suresh
+</button>
