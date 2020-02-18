@@ -307,3 +307,29 @@ cards for login and registration
     <button mat-flat-button>Login</button>
   </mat-card-actions>
 </mat-card>
+
+<!-- Material tab component -->
+<!-- to check which is active currently -->
+<mat-tab-group #tabRef (selectedTabChange)="logChange(tabRef.selectedIndex)">
+  <mat-tab label="Angular">Angular content</mat-tab>
+  <mat-tab label="React">React Content</mat-tab>
+  <mat-tab label="Viu">Viu Content</mat-tab>
+</mat-tab-group>
+{{ tabRef.selectedIndex }}
+
+<!-- Stepper Module -->
+<mat-horizontal-stepper>
+  <mat-step label="shipping addr" completed="true">
+    <p>shipping address</p>
+  </mat-step>
+  <mat-step label="billing addr" completed="false" optional>
+    <p>billing address</p>
+    <div>
+      <button mat-button matStepperPrevious>Prev</button>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+  <mat-step label="palce order" completed="false">
+    <p>place order</p>
+  </mat-step>
+</mat-horizontal-stepper>

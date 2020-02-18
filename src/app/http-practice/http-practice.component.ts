@@ -41,4 +41,7 @@ export class HttpPracticeComponent implements OnInit {
   logInfo(state) {
     console.log(state);
   }
+  logChange(index) {
+    console.log(index);
+  }
 }
