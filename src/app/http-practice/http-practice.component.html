@@ -331,5 +331,33 @@ cards for login and registration
   </mat-step>
   <mat-step label="palce order" completed="false">
     <p>place order</p>
+    <mat-label floatLabel="auto">Name</mat-label>
+    <input matInput />
   </mat-step>
 </mat-horizontal-stepper>
+
+<!-- Components related to forms matFormFieldModule, MatInputModule -->
+<mat-form-field floatLabel="auto" appearance="legacy">
+  <mat-label>FirstName</mat-label>
+  <input matInput required />
+  <mat-hint>minimun 6 character</mat-hint>
+</mat-form-field>
+<!-- floatLabel="auto"; floatLabel="always"; floatLabel="never" -->
+<!-- hideRequiredAttribute -->
+<!-- setting hint => using mat-hint -->
+
+<mat-form-field floatLabel="auto" appearance="standard">
+  <mat-label>LastName</mat-label>
+  <input matInput required />
+</mat-form-field>
+<mat-form-field floatLabel="auto" appearance="outline">
+  <mat-label>Mobile</mat-label>
+  <input matInput required />
+  <mat-hint>minimun 6 character</mat-hint>
+</mat-form-field>
+<mat-form-field floatLabel="auto" appearance="fill">
+  <mat-label>Mobile</mat-label>
+  <input matInput required />
+  <mat-hint>minimun 6 character</mat-hint>
+</mat-form-field>
+<!-- theaming -->
