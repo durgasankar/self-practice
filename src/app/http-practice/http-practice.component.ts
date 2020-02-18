@@ -33,6 +33,7 @@ export class HttpPracticeComponent implements OnInit {
   showSpinner = false;
   opened = false;
   selectedValue: string;
+  options: string[] = ["angular", "react", "viu"];
   loadData() {
     this.showSpinner = true;
     setTimeout(() => {
