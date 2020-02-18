@@ -32,6 +32,7 @@ export class HttpPracticeComponent implements OnInit {
   notification = -2;
   showSpinner = false;
   opened = false;
+  selectedValue: string;
   loadData() {
     this.showSpinner = true;
     setTimeout(() => {

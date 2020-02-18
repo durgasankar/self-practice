@@ -360,4 +360,18 @@ cards for login and registration
   <input matInput required />
   <mat-hint>minimun 6 character</mat-hint>
 </mat-form-field>
-<!-- theaming -->
+
+<!-- material select component -->
+<div>
+  <mat-form-field>
+    <mat-label>Topic</mat-label>
+    <mat-select [(value)]="selectedValue">
+      <mat-option>None</mat-option>
+      <mat-option value="Angular">Angular</mat-option>
+      <mat-option value="React">React</mat-option>
+      <mat-option value="Viu">Viu</mat-option>
+    </mat-select>
+  </mat-form-field>
+  {{ selectedValue }}
+</div>
+<!-- to get multiple values selected just use "multiple on mat-select tab" -->
