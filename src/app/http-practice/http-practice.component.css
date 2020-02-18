@@ -21,3 +21,6 @@ mat-sidenav {
   background: lightgreen;
   width: 200px;
 }
+mat-grid-tile {
+  background-color: lightgreen;
+}

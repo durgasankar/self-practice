@@ -233,3 +233,60 @@
     <p matLine>Paragraph 3</p>
   </mat-list-item>
 </mat-list>
+
+<!-- mat grid list -->
+<mat-grid-list cols="2">
+  <mat-grid-tile> Tile 1</mat-grid-tile>
+  <mat-grid-tile> Tile 2</mat-grid-tile>
+  <mat-grid-tile> Tile 3</mat-grid-tile>
+  <mat-grid-tile> Tile 4</mat-grid-tile>
+  <mat-grid-tile> Tile 5</mat-grid-tile>
+</mat-grid-list>
+<!-- material panel -->
+<mat-accordion>
+  <div>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Angular fundamentals
+        </mat-panel-title>
+        <mat-panel-description>
+          Total Duration : 3 hours
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
+        expedita ex? Ducimus, nemo, doloribus voluptate dolor dicta cupiditate
+        quae iure at nesciunt, atque minima maiores blanditiis veritatis ipsum
+        harum neque?
+      </p>
+      <mat-action-row>
+        <button mat-button>Enroll</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </div>
+  <!-- panel 2 -->
+  <div>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Angular Materials
+        </mat-panel-title>
+        <mat-panel-description>
+          Total Duration : 2 hours
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
+        expedita ex? Ducimus, nemo, doloribus voluptate dolor dicta cupiditate
+        quae iure at nesciunt, atque minima maiores blanditiis veritatis ipsum
+        harum neque?
+      </p>
+      <mat-action-row>
+        <button mat-button>Enroll</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </div>
+</mat-accordion>
+<!-- to get multiple panels at a same time  set 'multi'=true -->
+<!-- mat-accordion keeps on cordinating when first is clicked second colapsed  -->
