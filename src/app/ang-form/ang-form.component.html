@@ -2,12 +2,14 @@
   <div class="mat-display-1">Registration Form</div>
 </div>
 <div class="registration-container">
-  <form #userForm="ngForm">
+  <form #userForm="ngForm" method="GET">
     <div>
       {{ userForm.value | json }}
 
       <hr />
       {{ newUserModel | json }}
+      <hr />
+      {{ userForm.form.valid }}
     </div>
     <div>
       <label for="firstname">FirstName: </label>
@@ -30,11 +32,18 @@
     <div>
       <label for="emailId">EmailId: </label>
       <input
-        type="email"
+        required
+        #emailId="ngModel"
+        pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+        type="text"
         id="emailId"
         name="emailId"
         [(ngModel)]="newUserModel.emailId"
       />
+      <div *ngIf="emailId.errors && (emailId.invalid || emailId.touched)">
+        <small *ngIf="emailId.errors.required"> Email id is required</small>
+        <small *ngIf="emailId.errors.pattern"> Email id is invalid</small>
+      </div>
     </div>
     <div>
       <label for="password">Password: </label>
@@ -46,7 +55,7 @@
       />
     </div>
     <div>
-      <input type="submit" value="submit" />
+      <button type="submit" [disabled]="userForm.form.invalid">Submit</button>
     </div>
   </form>
 </div>
