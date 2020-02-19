@@ -27,6 +27,7 @@ import { ChildAppComponent } from "./parent-app/child-app/child-app.component";
 import { HttpPracticeComponent } from "./http-practice/http-practice.component";
 import { MaterialModule } from "./material/material.module";
 import { AngFormComponent } from './ang-form/ang-form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { AngFormComponent } from './ang-form/ang-form.component';
     ParentAppComponent,
     ChildAppComponent,
     HttpPracticeComponent,
-    AngFormComponent
+    AngFormComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@
   <div class="mat-display-1">Registration Form</div>
 </div>
 <div class="registration-container">
-  <form #userForm="ngForm" method="GET">
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()">
     <div>
       {{ userForm.value | json }}
 
