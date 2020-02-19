@@ -26,6 +26,7 @@ import { ParentAppComponent } from "./parent-app/parent-app.component";
 import { ChildAppComponent } from "./parent-app/child-app/child-app.component";
 import { HttpPracticeComponent } from "./http-practice/http-practice.component";
 import { MaterialModule } from "./material/material.module";
+import { AngFormComponent } from './ang-form/ang-form.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MaterialModule } from "./material/material.module";
     BuyProductsComponent,
     ParentAppComponent,
     ChildAppComponent,
-    HttpPracticeComponent
+    HttpPracticeComponent,
+    AngFormComponent
   ],
   imports: [
     BrowserModule,

@@ -24,3 +24,6 @@ mat-sidenav {
 mat-grid-tile {
   background-color: lightgreen;
 }
+table {
+  width: 100%;
+}

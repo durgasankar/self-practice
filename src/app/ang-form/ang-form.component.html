@@ -1,0 +1,52 @@
+<div>
+  <div class="mat-display-1">Registration Form</div>
+</div>
+<div class="registration-container">
+  <form #userForm="ngForm">
+    <div>
+      {{ userForm.value | json }}
+
+      <hr />
+      {{ newUserModel | json }}
+    </div>
+    <div>
+      <label for="firstname">FirstName: </label>
+      <input
+        type="text"
+        id="firstname"
+        name="firstname"
+        [(ngModel)]="newUserModel.firstName"
+      />
+    </div>
+    <div>
+      <label for="lastName">LastName: </label>
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        [(ngModel)]="newUserModel.lastName"
+      />
+    </div>
+    <div>
+      <label for="emailId">EmailId: </label>
+      <input
+        type="email"
+        id="emailId"
+        name="emailId"
+        [(ngModel)]="newUserModel.emailId"
+      />
+    </div>
+    <div>
+      <label for="password">Password: </label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="newUserModel.password"
+      />
+    </div>
+    <div>
+      <input type="submit" value="submit" />
+    </div>
+  </form>
+</div>
