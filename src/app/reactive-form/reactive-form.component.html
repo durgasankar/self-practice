@@ -1,11 +1,19 @@
 <div class="mat-display-1">Registration Form</div>
 
 <div class="registration">
-  <form [formGroup]="registrationForm">
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
     {{ registrationForm.value | json }}
     <div>
       <label>Username: </label>
-      <input type="text" name="userName" formControlName="userName" />
+      <input
+        type="text"
+        name="userName"
+        formControlName="userName"
+        [class.is-invalid]="
+          registrationForm.get('userName').invalid &&
+          registrationForm.get('userName').touched
+        "
+      />
     </div>
     <div>
       <label>Password: </label>
