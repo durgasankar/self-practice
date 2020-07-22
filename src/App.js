@@ -5,11 +5,15 @@ import Greet from './components/demo';
 import Welcome from './components/Welcome';
 import JsxExample from './components/Hallo';
 import { WithoutJsxExample } from './components/Hallo';
+import StateExample from './components/state'
+import Counter from './components/Counter';
 
+// use of props
 function App() {
   return (
     <div className="App">
-     <Welcome />
+      <Counter />
+      {/* <Welcome />
      2nd component
      <Greet /> 
      3rd Component
@@ -22,7 +26,9 @@ function App() {
      6th component
      <JsxExample name="Rupesh Patil" tech="nodejs"/> 
      7th component
-     <JsxExample name="Sudeep Khatiar" tech="java"/>
+     <JsxExample name="Sudeep Khatiar" tech="java"/> */}
+
+      <StateExample />
     </div>
   );
 }
