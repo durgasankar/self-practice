@@ -8,6 +8,7 @@ import { WithoutJsxExample } from './components/Hallo';
 import StateExample from './components/state'
 import Counter from './components/Counter';
 import EventHandler from './components/EventHandler';
+import ParentComponent from './components/ParentComponent';
 
 // use of props
 function App() {
@@ -30,7 +31,8 @@ function App() {
      <JsxExample name="Sudeep Khatiar" tech="java"/> */}
 
       {/* <StateExample /> */}
-      <EventHandler />
+      {/* <EventHandler /> */}
+      <ParentComponent />
     </div>
   );
 }
