@@ -13,11 +13,16 @@ function App() {
      2nd component
      <Greet /> 
      3rd Component
-     <Welcome />
+     <Welcome name="Ramesh"/>
+     <Welcome name="Suresh"/>
      4th component
-     <JsxExample />
-     5th component
      <WithoutJsxExample />
+     5th component
+     <JsxExample name="Duragasankar Mishra" tech="reactjs"/> 
+     6th component
+     <JsxExample name="Rupesh Patil" tech="nodejs"/> 
+     7th component
+     <JsxExample name="Sudeep Khatiar" tech="java"/>
     </div>
   );
 }
