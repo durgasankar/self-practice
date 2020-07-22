@@ -7,12 +7,13 @@ import JsxExample from './components/Hallo';
 import { WithoutJsxExample } from './components/Hallo';
 import StateExample from './components/state'
 import Counter from './components/Counter';
+import EventHandler from './components/EventHandler';
 
 // use of props
 function App() {
   return (
     <div className="App">
-      <Counter />
+      {/* <Counter /> */}
       {/* <Welcome />
      2nd component
      <Greet /> 
@@ -28,7 +29,8 @@ function App() {
      7th component
      <JsxExample name="Sudeep Khatiar" tech="java"/> */}
 
-      <StateExample />
+      {/* <StateExample /> */}
+      <EventHandler />
     </div>
   );
 }
