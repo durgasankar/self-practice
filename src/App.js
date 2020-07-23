@@ -9,6 +9,7 @@ import StateExample from './components/state'
 import Counter from './components/Counter';
 import EventHandler from './components/EventHandler';
 import ParentComponent from './components/ParentComponent';
+import UserGreeting from './components/UserGreeting';
 
 // use of props
 function App() {
@@ -32,7 +33,8 @@ function App() {
 
       {/* <StateExample /> */}
       {/* <EventHandler /> */}
-      <ParentComponent />
+      {/* <ParentComponent /> */}
+      <UserGreeting />
     </div>
   );
 }

@@ -6,6 +6,7 @@ function ChildComponent(props) {
             {/* Data is sent through the parameter of the property */}
             <button onClick={() => props.greetHandler('Durgasankar Mishra')}>Greet Parents</button>
         </div>
+        // if you want to pass parameter the pass arrow function
     )
 }
 
