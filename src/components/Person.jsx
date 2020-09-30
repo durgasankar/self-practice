@@ -12,15 +12,3 @@
 // }
 
 // export default Person
-
-import React from 'react'
-
-function Person({ person }) {
-    return (
-        <div>
-            <p>
-                I am {person.name}, my skill is {person.skill} and I like {person.like}</p>
-        </div>
-    )
-}
-export default Person
