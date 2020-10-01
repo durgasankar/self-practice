@@ -15,6 +15,8 @@ import TimeDate from './components/TimeDate';
 import Event from './components/Event';
 import UserInput from './components/UserInput/UserInput';
 import UserOutput from './components/UserOutput/UserOutput';
+import Validation from './components/Validation/Validation';
+import Char from './components/Char/Char';
 
 // // use of props
 // function App() {
@@ -55,19 +57,40 @@ import UserOutput from './components/UserOutput/UserOutput';
 
 class App extends Component {
   state = {
-    username: 'supermax'
+    // username: 'supermax'
+    userInput: ""
   }
-
   usernameChangedHandler = (event) => {
-this.setState({ username: event.target.value })
+    this.setState({ username: event.target.value })
+  }
+  inputChangeHandler = (event) => {
+    this.setState({ userInput: event.target.value });
+  }
+  // conditional redering and deleteing it 
+
+  deleteCharChandler = (index) => {
+    const text = this.state.userInput.split('');
+    text.splice(index, 1);
+    const updatedtext = text.join('');
+    this.setState({userInput: updatedtext});
   }
   render() {
+    const charactersList = this.state.userInput.split('').map((fetchedCharacter, index) => {
+      return <Char character={fetchedCharacter} key={index} clicked={() => this.deleteCharChandler(index)} />;
+    });
     return (
       <div className="App">
-        <UserInput changed={this.usernameChangedHandler} currentName={this.state.username} />
+        {/* <UserInput changed={this.usernameChangedHandler} currentName={this.state.username} />
         <UserOutput userName={this.state.username} />
         <UserOutput userName={this.state.username} />
-        <UserOutput userName="Kursi" />
+        <UserOutput userName="Kursi" /> */}
+        <p>Keep in mind that javascript Strings are arrays</p>
+        <hr />
+        <input type="text" onChange={this.inputChangeHandler} value={this.state.userInput} />
+        <h2>Input value : {this.state.userInput}</h2>
+        <Validation inputLength={this.state.userInput.length} />
+        {/* Rendering the list */}
+        {charactersList}
       </div>
     );
   }
